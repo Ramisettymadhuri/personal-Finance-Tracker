@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Personal Finance Tracker</h1>
+
+        <!-- Income and Expense Form -->
+        <div class="form-section">
+            <h2>Log Income or Expense</h2>
+            <form id="financeForm">
+                <select id="type" required>
+                    <option value="" disabled selected>Select Type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="text" id="category" placeholder="Category" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <input type="date" id="date" required>
+                <button type="button" id="addEntryBtn">Add Entry</button>
+            </form>
+        </div>
+
+        <!-- Monthly Budget Form -->
+        <div class="form-section">
+            <h2>Set Monthly Budget</h2>
+            <input type="number" id="incomeBudget" placeholder="Income Budget" required>
+            <input type="number" id="expenseBudget" placeholder="Expense Budget" required>
+            <button type="button" id="setBudgetBtn">Set Budget</button>
+        </div>
+
+        <!-- Charts Section (Pie Chart & Bar Chart side-by-side) -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <canvas id="pieChart" width="300" height="300"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="barChart" width="300" height="300"></canvas>
+            </div>
+        </div>
+
+        <!-- Budget Status -->
+        <div class="status-section">
+            <h2>Budget Status</h2>
+            <p id="budgetMessage">Set your budget to see the status.</p>
+        </div>
+
+        <!-- Savings Overview -->
+        <div class="status-section">
+            <h2>Monthly Savings</h2>
+            <p id="monthlySavings">Savings: 0.00 USD</p>
+        </div>
+
+        <!-- Clear Data Button -->
+        <button type="button" id="clearDataBtn">Clear Data</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
